@@ -30,7 +30,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.servicediscovery.zookeeper.ZookeeperServiceImporter;
 
 /**
- * @author Daren KLAMER (daren.klamer at toroclouad.com)
+ * @author Daren KLAMER (daren.klamer at torocloud.com)
  * @author GraviteeSource Team
  */
 public class ZookeeperServiceDiscovery extends AbstractServiceDiscovery<ZookeeperService> implements ServiceDiscovery {

@@ -18,7 +18,7 @@ package io.gravitee.discovery.zookeeper.configuration;
 import io.gravitee.discovery.api.ServiceDiscoveryConfiguration;
 
 /**
- * @author David BRASSELY (david.brassely at graviteesource.com)
+ * @author Daren KLAMER (daren.klamer at torocloud.com)
  * @author GraviteeSource Team
  */
 public class ZookeeperServiceDiscoveryConfiguration implements ServiceDiscoveryConfiguration {
