@@ -1,0 +1,45 @@
+{
+  "type" : "object",
+  "id" : "urn:jsonschema:io:gravitee:discovery:zookeeper:configuration:ZookeeperServiceDiscoveryConfiguration",
+  "properties" : {
+    "url" : {
+      "title": "Apache Zookeeper URL",
+      "description": "Address of the Zookeeper server.",
+      "type" : "string",
+      "default": "127.0.0.1:2181"
+    },
+    "basePath" : {
+      "title": "Base Path",
+      "description": "The base path to use. Default is /discovery. For compatibility with spring-cloud use /services.",
+      "type" : "string",
+      "default": "/discovery"
+    },
+    "service" : {
+      "title": "Service",
+      "description": "The service name to query.",
+      "type" : "string"
+    },
+    "maxRetries" : {
+      "title": "Max. Retries",
+      "description": "The maximum number of times to retry connecting to zookeeper.",
+      "type" : "integer",
+      "default": 3
+    },
+    "baseSleepTimeBetweenRetriesMs" : {
+      "title": "Base Sleep Time Between Retries (ms)",
+      "description": "The amount of time in milliseconds to wait between retries. Default is 1000.",
+      "type" : "integer",
+      "default": 1000
+    },
+    "connectionTimeoutMs" : {
+      "title": "Connection Timeout (ms)",
+      "description": "The amount of time to wait while connecting before timing out in milliseconds.",
+      "type" : "integer",
+      "default": 1000
+    }
+  },
+  "required": [
+    "url",
+    "service"
+  ]
+}
