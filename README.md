@@ -1,1 +1,1 @@
-# gravitee-service-discovery-consul
+# gravitee-service-discovery-zookeeper
