@@ -39,6 +39,8 @@ public class ZookeeperServiceDiscovery extends AbstractServiceDiscovery<Zookeepe
 
     private io.vertx.servicediscovery.ServiceDiscovery serviceDiscovery;
 
+    private static final String DISCOVERY_CHANNEL_NAME = "vertx.discovery.announce";
+
     @Autowired
     private Vertx vertx;
 
@@ -67,7 +69,7 @@ public class ZookeeperServiceDiscovery extends AbstractServiceDiscovery<Zookeepe
                 .put( "connectionTimeoutMs", configuration.getConnectionTimeoutMs() ),
             null );
 
-        vertx.eventBus().consumer( "vertx.discovery.announce", message -> {
+        vertx.eventBus().consumer( DISCOVERY_CHANNEL_NAME, message -> {
             JsonObject jsonObject = (JsonObject) message.body();
             if ( configuration.getService().equals( jsonObject.getString( "name" ) ) ) {
                 ZookeeperService zookeeperService = new ZookeeperService( jsonObject );
