@@ -10,9 +10,9 @@
     },
     "basePath" : {
       "title": "Base Path",
-      "description": "The base path to use. Default is /discovery. For compatibility with spring-cloud use /services.",
+      "description": "The base path to use. Default is /services. For compatibility with spring-cloud use /services.",
       "type" : "string",
-      "default": "/discovery"
+      "default": "/services"
     },
     "service" : {
       "title": "Service",

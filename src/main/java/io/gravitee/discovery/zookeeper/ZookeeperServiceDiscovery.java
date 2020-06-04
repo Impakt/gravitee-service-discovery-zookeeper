@@ -79,15 +79,14 @@ public class ZookeeperServiceDiscovery extends AbstractServiceDiscovery<Zookeepe
 
                 if ( "UP".equals( jsonObject.getString( "status" ) ) )
                     if ( oldService == null ) {
-                        LOGGER.info( "Register a new service from Zookeeper: id[{}] name[{}]",
+                        LOGGER.info( "Registering a new service from Zookeeper: id[{}] name[{}]",
                             zookeeperService.id(), configuration.getService() );
-                        System.out.println( zookeeperService );
                         handler.handle( registerEndpoint( zookeeperService ) );
                     } else {
                         // Update it only if target has been changed
                         if ( zookeeperService.port() != oldService.port() ||
                             !zookeeperService.host().equals( oldService.host() ) ) {
-                            LOGGER.info( "Update an existing service from Zookeeper: id[{}] name[{}] address[{}:{}]",
+                            LOGGER.info( "Updating an existing service from Zookeeper: id[{}] name[{}] address[{}:{}]",
                                 zookeeperService.id(), configuration.getService(), zookeeperService.host(),
                                 zookeeperService.port() );
                             handler.handle( unregisterEndpoint( oldService ) );
